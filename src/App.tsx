@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Award, Crown, X } from "lucide-react";
+import { ArrowUpRight, Award, Crown, X, Github } from "lucide-react";
 import Projects from "./components/Projects";
 
 const VIDEO_SRC =
@@ -87,21 +87,15 @@ function Hero() {
           I build scalable web applications that solve real-world problems.
         </p>
 
-        <div className="mt-6 text-white/60 text-sm">
-          Designed & Documented by{" "}
-          <span className="text-white font-semibold">
-            Karna Niranjan
-          </span>
-          <br />
-          <a
-            href="https://github.com/niran69"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-white"
-          >
-            github.com/niran69
-          </a>
-        </div>
+       <a
+  href="https://github.com/niran69"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 text-white hover:text-orange-400 transition-colors"
+>
+  <Github size={18} />
+  GitHub
+</a>
       </div>
     </section>
   );
