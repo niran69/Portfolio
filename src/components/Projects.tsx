@@ -3,25 +3,24 @@ import "./Projects.css";
 
 const projects = [
   {
-    title: "E-Commerce Website",
-    description: "Modern ecommerce platform with React & Stripe.",
-    image: "/assets/project1.jpg",
-    link: ""
-  },
-
-  {
     title: "FoodHub – System Design & Architecture",
     description:
       "Comprehensive technical documentation of a Spring Boot + React full-stack Food Delivery platform covering architecture, ERD, API design, JWT security, deployment strategy, and scalability.",
-    image: "/assets/foodhub.jpg",
-    link: "https://foodhub-docs.vercel.app"
+    image: "https://via.placeholder.com/600x400?text=FoodHub+Docs",
+    link: "https://foodhub-docs.vercel.app",
   },
-
+  {
+    title: "E-Commerce Website",
+    description:
+      "Modern ecommerce platform built with React & Stripe integration.",
+    image: "https://via.placeholder.com/600x400?text=E-Commerce",
+    link: "",
+  },
   {
     title: "Brand Identity Design",
     description: "Complete branding package for startup.",
-    image: "/assets/project2.jpg",
-    link: ""
+    image: "https://via.placeholder.com/600x400?text=Brand+Design",
+    link: "",
   },
 ];
 
@@ -33,14 +32,21 @@ const Projects = () => {
       <div className="project-grid">
         {projects.map((project, index) => (
           <div className="project-card" key={index}>
-  <img src={project.image} alt={project.title} />
-  <h3>{project.title}</h3>
-  <p>{project.description}</p>
+            <img src={project.image} alt={project.title} />
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
 
-  <button className="text-red-500 mt-2">
-    View Project
-  </button>
-</div>
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-500 mt-2 inline-block"
+              >
+                View Project
+              </a>
+            )}
+          </div>
         ))}
       </div>
     </section>
