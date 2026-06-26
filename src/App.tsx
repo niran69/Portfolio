@@ -54,20 +54,20 @@ function Navbar({ onMenuOpen }: { onMenuOpen: () => void }) {
 
 function Hero() {
   return (
-    <section className="relative flex min-h-screen w-full items-center overflow-hidden">
+    <section className="relative flex min-h-screen w-full items-center overflow-hidden px-4 sm:px-6">
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover md:object-center object-right"
         src={VIDEO_SRC}
       />
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 py-32 md:px-10 md:py-40 lg:px-16">
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-4 sm:px-6 md:px-10 lg:px-16 py-24 sm:py-32 md:py-40">
         <div className="flex items-center gap-2.5">
           <Crown className="h-4 w-4 text-amber-400" />
           <span className="text-xs uppercase tracking-[0.25em] text-white/70">
@@ -75,7 +75,7 @@ function Hero() {
           </span>
         </div>
 
-        <h1 className="mt-6 text-6xl font-extrabold uppercase text-white sm:text-7xl md:text-8xl lg:text-[9rem]">
+        <h1 className="mt-6 text-4xl sm:text-6xl md:text-8xl lg:text-[9rem] font-extrabold uppercase text-white leading-tight">
           Code
           <br />
           Create
