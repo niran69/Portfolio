@@ -42,3 +42,14 @@
   color: #ff3c3c;
   text-decoration: none;
 }
+.view-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #ff3c3c;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.view-link:hover {
+  opacity: 0.7;
+}
