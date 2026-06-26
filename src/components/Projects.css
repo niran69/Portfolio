@@ -53,3 +53,14 @@
 .view-link:hover {
   opacity: 0.7;
 }
+.view-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #ff3c3c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.view-link:hover {
+  opacity: 0.7;
+}
