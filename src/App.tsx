@@ -86,16 +86,25 @@ function Hero() {
         <p className="mt-8 max-w-xl text-base text-white/70 md:text-lg">
           I build scalable web applications that solve real-world problems.
         </p>
+        
+        <div className="mt-6 flex items-center gap-3 text-sm text-white/70">
+  <span>
+    Designed by{" "}
+    <span className="text-white font-semibold">
+      Karna Niranjan
+    </span>
+  </span>
 
-       <a
-  href="https://github.com/niran69"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center gap-2 text-white hover:text-orange-400 transition-colors"
->
-  <Github size={18} />
-  GitHub
-</a>
+  <a
+    href="https://github.com/niran69"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-1 text-white hover:text-orange-400 transition-colors"
+  >
+    <Github size={16} />
+    GitHub
+  </a>
+</div>
       </div>
     </section>
   );
