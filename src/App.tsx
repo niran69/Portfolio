@@ -21,7 +21,7 @@ function Navbar({ onMenuOpen }: { onMenuOpen: () => void }) {
           href="#"
           className="font-podium text-xl font-extrabold uppercase tracking-[0.15em] text-white transition-opacity hover:opacity-70 md:text-2xl"
         >
-          VANGUARD
+          KARNA NIRANJAN
         </a>
 
         {/* Center nav (md+) */}
