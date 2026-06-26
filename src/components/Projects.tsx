@@ -6,19 +6,22 @@ const projects = [
     title: "E-Commerce Website",
     description: "Modern ecommerce platform with React & Stripe.",
     image: "/assets/project1.jpg",
-    link: "",
+    link: ""
   },
+
+  {
+    title: "FoodHub – System Design & Architecture",
+    description:
+      "Comprehensive technical documentation of a Spring Boot + React full-stack Food Delivery platform covering architecture, ERD, API design, JWT security, deployment strategy, and scalability.",
+    image: "/assets/foodhub.jpg",
+    link: "https://foodhub-docs.vercel.app"
+  },
+
   {
     title: "Brand Identity Design",
     description: "Complete branding package for startup.",
     image: "/assets/project2.jpg",
-    link: "",
-  },
-  {
-    title: "Portfolio Website",
-    description: "Minimal personal portfolio design.",
-    image: "/assets/project3.jpg",
-    link: "",
+    link: ""
   },
 ];
 
