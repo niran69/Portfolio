@@ -54,7 +54,7 @@ function Navbar({ onMenuOpen }: { onMenuOpen: () => void }) {
 
 function Hero() {
   return (
-   <section className="relative flex min-h-screen min-w-[1200px] items-center overflow-hidden">
+    <section className="relative flex min-h-screen w-full items-center overflow-hidden">
       <video
         autoPlay
         muted
@@ -67,7 +67,7 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40" />
 
-      <div className="relative z-10 mx-auto w-[1200px] px-6 py-32">
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 py-32 md:px-10 md:py-40 lg:px-16">
         <div className="flex items-center gap-2.5">
           <Crown className="h-4 w-4 text-amber-400 md:h-5 md:w-5" />
           <span className="font-inter text-xs font-medium uppercase tracking-[0.25em] text-white/70 md:text-sm">
@@ -75,7 +75,7 @@ function Hero() {
           </span>
         </div>
 
-        <h1 className="mt-6 font-podium text-6xl font-extrabold uppercase leading-[0.95] tracking-tight text-white">
+        <h1 className="mt-6 font-podium text-6xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[9rem]">
           Code
           <br />
           Create
@@ -109,6 +109,7 @@ function Hero() {
     </section>
   );
 }
+
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
