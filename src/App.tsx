@@ -54,28 +54,28 @@ function Navbar({ onMenuOpen }: { onMenuOpen: () => void }) {
 
 function Hero() {
   return (
-    <section className="relative flex min-h-[90vh] sm:min-h-screen w-full items-center overflow-hidden px-4">
+    <section className="relative flex min-h-screen w-full items-center overflow-hidden">
       <video
         autoPlay
         muted
         loop
         playsInline
-       className="absolute inset-0 h-full w-full object-cover object-center sm:object-right"
+        className="absolute inset-0 h-full w-full object-cover"
         src={VIDEO_SRC}
       />
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-4 sm:px-6 md:px-10 lg:px-16 py-24 sm:py-32 md:py-40">
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 py-32 md:px-10 md:py-40 lg:px-16">
         <div className="flex items-center gap-2.5">
-          <Crown className="h-4 w-4 text-amber-400" />
-          <span className="text-xs uppercase tracking-[0.25em] text-white/70">
+          <Crown className="h-4 w-4 text-amber-400 md:h-5 md:w-5" />
+          <span className="font-inter text-xs font-medium uppercase tracking-[0.25em] text-white/70 md:text-sm">
             Full Stack Developer
           </span>
         </div>
 
-        <h1 className="mt-6 text-4xl sm:text-6xl md:text-8xl lg:text-[9rem] font-extrabold uppercase text-white leading-tight">
+        <h1 className="mt-6 font-podium text-6xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[9rem]">
           Code
           <br />
           Create
@@ -83,33 +83,32 @@ function Hero() {
           Deploy
         </h1>
 
-        <p className="mt-8 max-w-xl text-base text-white/70 md:text-lg">
+        <p className="mt-8 max-w-xl font-inter text-base font-light leading-relaxed text-white/70 md:text-lg">
           I build scalable web applications that solve real-world problems.
         </p>
-        
-        <div className="mt-6 flex items-center gap-3 text-sm text-white/70">
-  <span>
-    Designed by{" "}
-    <span className="text-white font-semibold">
-      Karna Niranjan
-    </span>
-  </span>
 
-  <a
-    href="https://github.com/niran69"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center gap-1 text-white hover:text-orange-400 transition-colors"
-  >
-    <Github size={16} />
-    GitHub
-  </a>
-</div>
+        <div className="mt-6 flex items-center gap-3 text-sm text-white/70">
+          <span>
+            Designed by{" "}
+            <span className="text-white font-semibold">
+              Karna Niranjan
+            </span>
+          </span>
+
+          <a
+            href="https://github.com/niran69"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-white hover:text-orange-400 transition-colors"
+          >
+            <Github size={16} />
+            GitHub
+          </a>
+        </div>
       </div>
     </section>
   );
 }
-
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
