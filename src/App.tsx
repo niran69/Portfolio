@@ -5,7 +5,7 @@ import Projects from "./components/Projects";
 const VIDEO_SRC =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260606_154941_df1a96e1-a06f-450c-bd02-d863414cc1a0.mp4";
 
-const NAV_LINKS = ["Projects", "Studio", "Offerings", "Inquire"] as const;
+const NAV_LINKS = ["Projects", "Studio", "Offerings", "ABOUT"] as const;
 
 const STATS = [
   { value: "20+", label: "Projects Built" },
@@ -13,7 +13,13 @@ const STATS = [
   { value: "2+", label: "Years of Coding" },
 ];
 
-function Navbar({ onMenuOpen }: { onMenuOpen: () => void }) {
+function Navbar({
+  onMenuOpen,
+  onAboutOpen,
+}: {
+  onMenuOpen: () => void;
+  onAboutOpen: () => void;
+}) {
   return (
     <nav className="w-full absolute top-0 left-0 z-40">
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-10 md:py-6 lg:px-16">
@@ -27,12 +33,21 @@ function Navbar({ onMenuOpen }: { onMenuOpen: () => void }) {
         <ul className="hidden items-center gap-10 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link}>
-              <a
-                href={`#${link.toLowerCase()}`}
-                className="font-inter text-sm font-medium uppercase tracking-wider text-white/80 hover:text-white"
-              >
-                {link}
-              </a>
+              {link === "ABOUT" ? (
+                <button
+                  onClick={onAboutOpen}
+                  className="font-inter text-sm font-medium uppercase tracking-wider text-white/80 hover:text-white"
+                >
+                  About
+                </button>
+              ) : (
+                <a
+                  href={`#${link.toLowerCase()}`}
+                  className="font-inter text-sm font-medium uppercase tracking-wider text-white/80 hover:text-white"
+                >
+                  {link}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -51,7 +66,6 @@ function Navbar({ onMenuOpen }: { onMenuOpen: () => void }) {
     </nav>
   );
 }
-
 function Hero() {
   return (
     <section className="relative flex min-h-screen w-full items-center overflow-hidden">
@@ -82,47 +96,49 @@ function Hero() {
           <br />
           Deploy
         </h1>
-
-        <p className="mt-8 max-w-xl font-inter text-base font-light leading-relaxed text-white/70 md:text-lg">
-          I build scalable web applications that solve real-world problems.
-        </p>
-
-        <div className="mt-6 flex items-center gap-3 text-sm text-white/70">
-          <span>
-            Designed by{" "}
-            <span className="text-white font-semibold">
-              Karna Niranjan
-            </span>
-          </span>
-
-          <a
-            href="https://github.com/niran69"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 text-white hover:text-orange-400 transition-colors"
-          >
-            <Github size={16} />
-            GitHub
-          </a>
-        </div>
       </div>
     </section>
   );
 }
 
 export default function App() {
+  const [aboutOpen, setAboutOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="relative min-h-screen w-full bg-black text-white">
-      <Navbar onMenuOpen={() => setMenuOpen(true)} />
+      <Navbar
+        onMenuOpen={() => setMenuOpen(true)}
+        onAboutOpen={() => setAboutOpen(true)}
+      />
+
       <Hero />
       <Projects />
 
-      {/* ✅ FOOTER */}
+      {aboutOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+          <div className="bg-[#111] p-8 max-w-lg w-[90%] rounded-xl text-white relative">
+            <button
+              onClick={() => setAboutOpen(false)}
+              className="absolute top-4 right-4 text-white/60 hover:text-white"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-2xl font-bold mb-4">About Me</h2>
+
+            <p className="text-white/70 leading-relaxed">
+              I am Karna Niranjan, a Full Stack Developer passionate about
+              building scalable web applications and designing production-ready
+              system architectures.
+            </p>
+          </div>
+        </div>
+      )}
+
       <footer className="mt-20 py-10 text-center text-white/60 text-sm border-t border-white/10">
         <p>© 2026 Karna Niranjan</p>
-        <p>Built with React & Vite · Full Stack Developer Portfolio</p>
+        <p>Built with React & Vite</p>
       </footer>
     </div>
   );
