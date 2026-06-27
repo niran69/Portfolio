@@ -75,7 +75,7 @@ function Hero() {
           </span>
         </div>
 
-        <h1 className="mt-6 font-podium text-6xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[9rem]">
+        <h1 className="mt-6 font-podium text-6xl font-extrabold uppercase leading-[0.95] tracking-tight text-white">
           Code
           <br />
           Create
