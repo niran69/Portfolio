@@ -1,13 +1,15 @@
 import React from "react";
 import "./Projects.css";
+import { Layers } from "lucide-react";
 
 const projects = [
   {
-    title: "FoodHub – System Design & Architecture",
-    description:
-      "Comprehensive technical documentation of a Spring Boot + React full-stack Food Delivery platform covering architecture, ERD, API design, JWT security, deployment strategy, and scalability.",
-    link: "https://foodhub-docs.vercel.app",
-  },
+  title: "FoodHub – System Design & Architecture",
+  description:
+    "Production‑ready system design documentation covering architecture, ERD, API design, security, and deployment strategy.",
+  link: "https://foodhub-docs.vercel.app",
+  icon: "architecture",
+},
   {
     title: "E-Commerce Website",
     description:
@@ -29,21 +31,32 @@ const Projects = () => {
 
       <div className="project-grid">
         {projects.map((project, index) => (
-          <div className="project-card" key={index}>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
+         <div className="project-card p-8 rounded-xl bg-[#111] hover:bg-[#151515] transition-all duration-300">
+  {project.title.includes("FoodHub") && (
+    <div className="mb-4 text-orange-400">
+      <Layers size={28} strokeWidth={2} />
+    </div>
+  )}
 
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="view-link"
-              >
-                View Project →
-              </a>
-            )}
-          </div>
+  <h3 className="text-lg font-semibold text-white">
+    {project.title}
+  </h3>
+
+  <p className="text-sm text-white/70 mt-3 leading-relaxed">
+    {project.description}
+  </p>
+
+  {project.link && (
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-orange-400 mt-4 inline-block font-medium hover:underline"
+    >
+      View Documentation →
+    </a>
+  )}
+</div>
         ))}
       </div>
     </section>

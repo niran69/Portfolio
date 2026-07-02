@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Award, Crown, X, Github } from "lucide-react";
+import { ArrowUpRight, Award, Laptop, X, Github } from "lucide-react";
 import Projects from "./components/Projects";
 
 const VIDEO_SRC =
@@ -16,9 +16,11 @@ const STATS = [
 function Navbar({
   onMenuOpen,
   onAboutOpen,
+  aboutOpen
 }: {
   onMenuOpen: () => void;
   onAboutOpen: () => void;
+  aboutOpen: boolean;
 }) {
   return (
     <nav className="w-full absolute top-0 left-0 z-40">
@@ -36,7 +38,7 @@ function Navbar({
               {link === "ABOUT" ? (
                 <button
                   onClick={onAboutOpen}
-                  className="font-inter text-sm font-medium uppercase tracking-wider text-white/80 hover:text-white"
+                  className="cursor-pointer font-inter text-sm font-medium uppercase tracking-wider text-white/80 hover:text-white"     
                 >
                   About
                 </button>
@@ -50,6 +52,17 @@ function Navbar({
               )}
             </li>
           ))}
+          <li>
+  <a
+    href="https://github.com/niran69"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 font-inter text-sm font-medium uppercase tracking-wider text-white/80 hover:text-white transition-colors"
+  >
+    <Github size={16} />
+    GitHub
+  </a>
+</li>
         </ul>
 
         <div className="flex items-center gap-4">
@@ -82,12 +95,12 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 py-32 md:px-10 md:py-40 lg:px-16">
-        <div className="flex items-center gap-2.5">
-          <Crown className="h-4 w-4 text-amber-400 md:h-5 md:w-5" />
-          <span className="font-inter text-xs font-medium uppercase tracking-[0.25em] text-white/70 md:text-sm">
-            Full Stack Developer
-          </span>
-        </div>
+       <div className="flex items-center gap-3">
+  <Laptop className="h-5 w-5 text-orange-400" />
+  <span className="font-inter text-xs font-medium uppercase tracking-[0.25em] text-white/70">
+    Full Stack Developer
+  </span>
+</div>
 
         <h1 className="mt-6 font-podium text-6xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[9rem]">
           Code
@@ -107,34 +120,23 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen w-full bg-black text-white">
-      <Navbar
-        onMenuOpen={() => setMenuOpen(true)}
-        onAboutOpen={() => setAboutOpen(true)}
-      />
+      <Navbar 
+  onMenuOpen={() => setMenuOpen(true)} 
+  onAboutOpen={() => setAboutOpen(!aboutOpen)} 
+  aboutOpen={aboutOpen}
+/>
 
       <Hero />
       <Projects />
 
-      {aboutOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-          <div className="bg-[#111] p-8 max-w-lg w-[90%] rounded-xl text-white relative">
-            <button
-              onClick={() => setAboutOpen(false)}
-              className="absolute top-4 right-4 text-white/60 hover:text-white"
-            >
-              ✕
-            </button>
-
-            <h2 className="text-2xl font-bold mb-4">About Me</h2>
-
-            <p className="text-white/70 leading-relaxed">
-              I am Karna Niranjan, a Full Stack Developer passionate about
-              building scalable web applications and designing production-ready
-              system architectures.
-            </p>
-          </div>
-        </div>
-      )}
+    {aboutOpen && (
+  <div className="absolute top-20 right-20 w-80 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-6 text-white shadow-2xl">
+    <p className="text-sm text-white/80 leading-relaxed">
+      I am Karna Niranjan, a Full Stack Developer passionate about building
+      scalable web applications and designing production-ready architectures.
+    </p>
+  </div>
+)}
 
       <footer className="mt-20 py-10 text-center text-white/60 text-sm border-t border-white/10">
         <p>© 2026 Karna Niranjan</p>
